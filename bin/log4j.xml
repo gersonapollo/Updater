@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="true" xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="c:\\Updater\\Updater.log" />
+        <param name="append" value="true" />
+        <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+            <param name="ActiveFileName" value="c:\\Updater\\Updater.log"/>
+        </rollingPolicy>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{yyMMdd HH:mm:ss,SSS} [%t] %-5p %c %X %m%n" />
+        </layout>
+    </appender>
+   
+    <root>
+        <priority value="all" />
+        <appender-ref ref="fileAppender" />
+    </root>
+</log4j:configuration>
